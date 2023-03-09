@@ -40,18 +40,27 @@ and thereby terminate ```task1```. The same will occur for ```task2```.
 
 https://github.com/brandonbate/async-tutorial/blob/a7309a3c0f8fbaddfb0c9e604d27c1e41534b6c8/example3.py#L1-L16
 
-The following example gives a more explicit description of how this event loop works.
+Execution of ```task1`` begins when ```await task1``` is called within ```main```.
+Execution in ```main``` is paused until ```task1``` completes, but remarkably,
+```task2``` executes as well. That's because ```task2 = asyncio.create_task(say_after(3, 'world'))```
+adds ```task2``` to the event loop (without executing it). Once ```task1``` pauses execution,
+```task2``` will immediately take over.
+When running on my local machine, I can see the output of ```task2``` even if the ```await task2``` line is
+removed. The ```await task2``` command exists simply to ensure that your Python program doesn't end
+before task2 completes.
+
+Here is another example that illustrates ```asyncio``` operates:
 
 https://github.com/brandonbate/async-tutorial/blob/fc5afd01257e3228bcb1bb5676d89f14b6b60d67/example4.py#L1-L14
 
-In the above example, we use ```asyncio.gather(...)``` to create three tasks for the ```count``` coroutine.
+In the above example, we use ```asyncio.gather(...)``` to automatically create and execute three tasks for
+the ```count``` coroutine.
 The event loop hands off execution to the first task. This first task runs uninterrupted until it encounters
-```await asyncio.sleep(1)```. 
+```await asyncio.sleep(1)```. It then passes execution to the second task, and so forth. Because
+```time.sleep``` is not a coroutine, execution of coroutines is not passed to the event loop when this executes.
 
-This results in the ```count``` coroutine being executed concurrently. We have two ```sleep``` commands
-in ```count```. The first
+Here is a breif description of some of the important commands needed to create and manage tasks in ```asyncio```:
 
-
-	asyncio.run(...) runs a single coroutine to the exclusion of other coroutines.
-	asyncio.create(...) initiates a single coroutine to run concurrently with other coroutines.
-	asyncio.gather(...) initiates mutliple coroutines to run concurrently with other coroutines.
+* ```asyncio.run(...)``` runs a single coroutine to the exclusion of other coroutines.
+* ```asyncio.create(...)``` initiates a single task that runs a coroutine through the event loop.
+* ```asyncio.gather(...)``` initiates mutliple tasks that run coroutines through the event loop.
