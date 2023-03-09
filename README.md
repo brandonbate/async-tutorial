@@ -8,7 +8,7 @@ The following example shows how coroutines can behave just like regular function
 
 https://github.com/brandonbate/async-tutorial/blob/17bc30030bf8966b02e78524514f30fe909866f7/example1.py#L1-L9
 
-Simply using they keywords ```async``` and ```await will not cause coroutines to execute concurrently.
+Simply using they keywords ```async``` and ```await``` will not cause coroutines to execute concurrently.
 In the following example, the two function calls to ```say_after``` do not run concurrently:
 
 https://github.com/brandonbate/async-tutorial/blob/a7309a3c0f8fbaddfb0c9e604d27c1e41534b6c8/example2.py#L1-L12
