@@ -29,7 +29,7 @@ simultaneously:
 https://github.com/brandonbate/async-tutorial/blob/a7309a3c0f8fbaddfb0c9e604d27c1e41534b6c8/example2.py#L1-L12
 
 We allow coroutines to pass off execution to each other by creating **tasks** for them.
-Behind the scence, Python runs an **event loop** that keeps a list of our tasks.
+Behind the scene, Python runs an **event loop** that keeps a list of our tasks.
 When the coroutine of a task reaches a point where it pauses execution, the event loop takes over and
 runs the next task. Iteration through the list of tasks will continue in this way until we return to the
 original coroutine.
