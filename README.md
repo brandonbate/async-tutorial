@@ -8,8 +8,17 @@ The following example shows how coroutines can behave just like regular function
 
 https://github.com/brandonbate/async-tutorial/blob/17bc30030bf8966b02e78524514f30fe909866f7/example1.py#L1-L9
 
-**Tasks** are used to schedule coroutines concurrently.
-This is done "behind the scences" using an **event loop**.
+Simply using they keywords ```async``` and ```await will not cause coroutines to execute concurrently.
+In the following example, the two function calls to ```say_after``` do not run concurrently:
+
+https://github.com/brandonbate/async-tutorial/blob/a7309a3c0f8fbaddfb0c9e604d27c1e41534b6c8/example2.py#L1-L12
+
+We can allow coroutines to run concurrently if we create **tasks** for them.
+Behind the scence, Python runs an **event loop** that executes tasks concurrent.
+Notice that simply creating a task automatically causes our coroutines to be executed concurrently
+by the event loop:
+
+https://github.com/brandonbate/async-tutorial/blob/a7309a3c0f8fbaddfb0c9e604d27c1e41534b6c8/example3.py#L1-L16
 
 Suppose we have a function ```g()``` in which we have an ```await f()```.
 Program execution of ```g()``` will be paused once we encounter ```await f()```.
