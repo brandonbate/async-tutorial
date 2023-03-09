@@ -53,7 +53,7 @@ adds ```task2``` to the event loop (without executing it). Once ```task1``` paus
 ```task2``` will immediately take over.
 When running on my local machine, I can see the output of ```task2``` even if the ```await task2``` line is
 removed. The ```await task2``` command exists simply to ensure that your Python program doesn't end
-before task2 completes. It doesn't actually cause ```task2``` to execute.
+before ```task2``` completes. It doesn't actually cause ```task2``` to execute.
 
 Here is another example that illustrates ```asyncio``` operates:
 
