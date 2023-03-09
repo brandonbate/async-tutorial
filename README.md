@@ -5,8 +5,8 @@ the [Python documentation](https://docs.python.org/3/library/asyncio.html) and
 [this github page](https://gist.github.com/showa-yojyo/4ed200d4c41f496a45a7af2612912df3).
 I recommend exploring these pages/examples to get a better understanding of ```asyncio```.
 
-In traditional programming, when a function ```f()``` calls another function ```g()```, the program will
-immediately pass execution to ```g()```. Once ```g()``` completes, execution will return to ```f()```.
+In traditional Python program, when a function ```f()``` calls another function ```g()```, the Python
+interpreter will immediately pass execution to ```g()```. Once ```g()``` completes, execution will return to ```f()```.
 By using the ```asyncio``` library, we can allow a function ```f()``` to call two functions ```g()```
 and ```h()``` so that the execution of ```g()``` and ```h()``` appears simultaneous (or concurrent).
 In reality, however, execution is not simultaneous. Instead, ```g()``` and ```h()``` are designed to
