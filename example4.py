@@ -1,5 +1,3 @@
-# countasync.py
-
 import asyncio
 import time
 
