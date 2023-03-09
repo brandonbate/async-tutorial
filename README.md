@@ -67,7 +67,7 @@ This pattern continues until sleep requirements are satisified.
 Because ```time.sleep``` is not a coroutine, execution of coroutines is not passed to the event loop when this
 command executes.
 
-Here is a breif description of some of the important commands needed to create and manage tasks in ```asyncio```:
+Here is a brief description of some of the important commands needed to create and manage tasks in ```asyncio```:
 
 * ```asyncio.run(...)``` runs a single coroutine to the exclusion of other coroutines.
 * ```asyncio.create(...)``` initiates a single task that runs a coroutine through the event loop.
