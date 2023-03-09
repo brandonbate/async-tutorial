@@ -46,7 +46,7 @@ and thereby terminate ```task1```. The same will occur for ```task2```.
 
 https://github.com/brandonbate/async-tutorial/blob/a7309a3c0f8fbaddfb0c9e604d27c1e41534b6c8/example3.py#L1-L16
 
-Execution of ```task1`` begins when ```await task1``` is called within ```main```.
+Execution of ```task1``` begins when ```await task1``` is called within ```main```.
 Execution in ```main``` is paused until ```task1``` completes, but remarkably,
 ```task2``` executes as well. That's because ```task2 = asyncio.create_task(say_after(3, 'world'))```
 adds ```task2``` to the event loop (without executing it). Once ```task1``` pauses execution,
