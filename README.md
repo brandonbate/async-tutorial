@@ -71,7 +71,7 @@ Here is a brief description of some of the important commands needed to create a
 
 * ```asyncio.run(...)``` runs a single coroutine to the exclusion of other coroutines.
 * ```asyncio.create(...)``` initiates a single task but doesn't automatically start the event loop.
-* ```asyncio.gather(...)``` initiates mutliple tasks that starts the event loop.
+* ```asyncio.gather(...)``` initiates mutliple tasks and starts the event loop.
 
 In Django, we use ```sync_to_async``` to make a traditional function (defined by ```def```) appear as though
 its a coroutine (defined by ```async def```). But if ```f(input)``` is a traditional function, then it has no
