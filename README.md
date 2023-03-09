@@ -70,7 +70,7 @@ command executes.
 Here is a brief description of some of the important commands needed to create and manage tasks in ```asyncio```:
 
 * ```asyncio.run(...)``` runs a single coroutine to the exclusion of other coroutines.
-* ```asyncio.create(...)``` initiates a single task but doesn't automatically start the event loop.
+* ```asyncio.create_task(...)``` initiates a single task but doesn't automatically start the event loop.
 * ```asyncio.gather(...)``` initiates mutliple tasks and starts the event loop.
 
 In Django, we use ```sync_to_async``` to make a traditional function (defined by ```def```) appear as though
