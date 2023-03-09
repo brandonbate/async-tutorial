@@ -1,8 +1,9 @@
 # asyncio Tutorial
 
-I used and modified examples from
-[showa-yojyo](https://gist.github.com/showa-yojyo/4ed200d4c41f496a45a7af2612912df3)
-and [Python documentation](https://docs.python.org/3/library/asyncio.html).
+In this tutorial, I used and modified examples from
+the [Python documentation](https://docs.python.org/3/library/asyncio.html) and
+[this github page](https://gist.github.com/showa-yojyo/4ed200d4c41f496a45a7af2612912df3).
+I recommend exploring these pages/examples to get a better understanding of ```asyncio```.
 
 In traditional programming, when a function ```f()``` calls another function ```g()```, the program will
 immediately pass execution to ```g()```. Once ```g()``` completes, execution will return to ```f()```.
