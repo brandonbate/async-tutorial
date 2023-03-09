@@ -20,6 +20,8 @@ by the event loop:
 
 https://github.com/brandonbate/async-tutorial/blob/a7309a3c0f8fbaddfb0c9e604d27c1e41534b6c8/example3.py#L1-L16
 
+
+Let's explain coroutine execution in more detail. 
 Suppose we have a function ```g()``` in which we have an ```await f()```.
 Program execution of ```g()``` will be paused once we encounter ```await f()```.
 At this point, Python will begin execting ```f()```.
@@ -27,6 +29,11 @@ If we have a single-core machine, Python may temporarily switch between executin
 If we have a multi-core machine, Python may allow ```f()``` to execute on one of these cores while other
 coroutines execute on other cores.
 Whatever the case, execution in ```g()``` will remained pause until the ```f()``` coroutine completes.
+
+In the following example illustrates how
+
+https://github.com/brandonbate/async-tutorial/blob/fc5afd01257e3228bcb1bb5676d89f14b6b60d67/example4.py#L1-L14
+
 
 	asyncio.run(...) runs a single coroutine to the exclusion of other coroutines.
 	asyncio.create(...) initiates a single coroutine to run concurrently with other coroutines.
