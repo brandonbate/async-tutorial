@@ -64,3 +64,14 @@ Here is a breif description of some of the important commands needed to create a
 * ```asyncio.run(...)``` runs a single coroutine to the exclusion of other coroutines.
 * ```asyncio.create(...)``` initiates a single task that runs a coroutine through the event loop.
 * ```asyncio.gather(...)``` initiates mutliple tasks that run coroutines through the event loop.
+
+A queue is a data structure where items are added in a "first-in"/"first-out" basis. The ```asycio.Queue``` allows
+coroutines to add and remove from the queue. In the following example, we create tasks that call the ```consume```
+and ```produce``` functions. We call these tasks "consumers" and "producers". A producer will wait a random length
+of time and then add a random letter to the queue. A consumer will wait a random length of time then take an item
+from the queue. We use infinite loops to make this behavior continue. You can stop execution of this program by
+typing ```CTL + C```.
+
+https://github.com/brandonbate/async-tutorial/blob/9db3525f8c581196ae784cf0ad97a22667afb3c9/example5.py#L1-L31
+
+https://github.com/brandonbate/async-tutorial/blob/9db3525f8c581196ae784cf0ad97a22667afb3c9/example5.py#L1-L31
