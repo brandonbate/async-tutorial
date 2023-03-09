@@ -2,13 +2,14 @@
 
 A **coroutine** is a function that can run concurrently with other coroutines.
 These are designated in Python by ```async def```.
+Whenever we call a coroutine ```f()```, we must write ```await f()``` or ```out = await f()```
+(if we want to save the coroutine output).
+The following example shows how coroutines can behave just like regular functions, albeit with extra keywords:
 
 https://github.com/brandonbate/async-tutorial/blob/17bc30030bf8966b02e78524514f30fe909866f7/example1.py#L1-L9
 
 **Tasks** are used to schedule coroutines concurrently.
 This is done "behind the scences" using an **event loop**.
-Whenever we call a coroutine ```f()```, we must write ```await f()``` or ```out = await f()``` (if we want to
-save the coroutine output).
 
 Suppose we have a function ```g()``` in which we have an ```await f()```.
 Program execution of ```g()``` will be paused once we encounter ```await f()```.
