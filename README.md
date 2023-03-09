@@ -82,7 +82,8 @@ A similar function is ```async_to_sync```. This allows a coroutine to NOT pass c
 
 The ```asyncio``` library is ideal in applications where there are potentially long delays due to communication.
 That's why ```asyncio``` is used with to create ASGI applications.
-The next example is meant to simulate the a processing scenario that deals with communcation/processing delays.
+
+The next example is meant to simulate a processing scenario that deals with communcation delays.
 To model this, we need to understand queues.
 A queue is a data structure where items are added in a "first-in"/"first-out" basis. The ```asycio.Queue``` allows
 coroutines to add and remove from the queue. In the following example, we create tasks that call the ```consume```
