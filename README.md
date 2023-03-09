@@ -85,9 +85,9 @@ That's why ```asyncio``` is used with to create ASGI applications.
 
 The next example is meant to simulate a processing scenario that deals with communcation delays.
 To model this, we need to understand queues.
-A queue is a data structure where items are added in a "first-in"/"first-out" basis. The ```asycio.Queue``` allows
-coroutines to add and remove from the queue. In the following example, we create tasks that call the ```consume```
-and ```produce``` functions. We call these tasks "consumers" and "producers". A producer will wait a random length
+A queue is a data structure where items are added in a "first-in"/"first-out" basis. The ```asyncio.Queue``` allows
+coroutines to add and remove items from the queue. In the following example, we create tasks that call the ```consume```
+and ```produce``` coroutines. We call these tasks "consumers" and "producers". A producer will wait a random length
 of time and then add a random letter to the queue. A consumer will wait a random length of time then take an item
 from the queue. We use infinite loops to make this behavior continue. You can stop execution of this program by
 typing ```CTL + C```.
